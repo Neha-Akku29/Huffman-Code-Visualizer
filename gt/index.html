@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Huffman Coding</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section>
+      <h2>Enter the Elements</h2>
+      <div class="input-display">
+        <h3>Input Frequencies</h3>
+        <div class="input-group">
+          <input type="text" id="frequencies" placeholder="1,3,5,6" style="width: 100%; padding: 10px;color: aliceblue; background-color:var( --container-bg); border-radius: 6px; border: none;">
+        </div>
+      </div>
+
+      <div class="input-display">
+        <h3>Initial Sorted Array</h3>
+        <div class="array-display" id="sorted-array">
+          <div style="text-align: center; width: 100%; font-size: 0.9rem;">No input generated yet</div>
+        </div>
+      </div>
+
+      <div class="buttons-row">
+        <button id="generate-btn">Generate Tree</button>
+        <button id="reset-btn">Reset</button>
+      </div>
+    </section>
+
+    <!-- Tree Visualization Section -->
+    <section>
+      <h2>Tree Visualization</h2>
+      <div class="tree-area">
+        <div class="tree-controls">
+          <button id="prev-step" disabled>Previous Step</button>
+          <button id="auto-play" disabled>Auto Play</button>
+          <button id="next-step" disabled>Next Step</button>
+          <span id="step-counter" style="align-self: center; margin-left: 15px; font-weight: bold;">Step: 0/0</span>
+        </div>
+        
+        <!-- Current Sorted Array Display -->
+        <div class="current-sorted-array" id="current-sorted-array" style="display: none;">
+          <h3>Current Sorted Array</h3>
+          <div class="current-array-display" id="current-array-display">
+            <!-- Array items will be inserted here by JavaScript -->
+          </div>
+        </div>
+        
+        <div class="tree-container">
+          <div class="tree" id="tree"></div>
+        </div>
+        
+        <div class="step-info-container">
+          <h3>Algorithm Steps</h3>
+          <div id="step-description" style="font-size: 0.9rem;">No steps to display yet.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Huffman Table Section -->
+    <section>
+      <h2>Huffman Binary Code Table</h2>
+      <div class="table-box">
+        <table class="code-table">
+          <thead>
+            <tr>
+              <th>Character</th>
+              <th>Frequency</th>
+              <th>Huffman Code</th>
+              <th>Length</th>
+            </tr>
+          </thead>
+          <tbody id="code-table-body">
+            <tr>
+              <td colspan="4" style="text-align: center; font-size: 0.9rem;">No codes generated yet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
